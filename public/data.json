@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Beach Flip Flops",
+    "brand": "WaveWalk",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 25,
+    "description": "Comfortable and lightweight flip flops ideal for beach days.",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
+    "category": "Footwear"
+  },
+  {
+    "id": 3,
+    "name": "Summer Straw Hat",
+    "brand": "SunnyStyle",
+    "price": 18,
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Breathable straw hat to keep you cool and protected from the sun.",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "name": "Insulated Water Bottle",
+    "brand": "CoolSip",
+    "price": 20,
+    "rating": 4.8,
+    "stock": 30,
+    "description": "Keeps your drinks cold for hours during hot summer days.",
+    "image": "https://images.unsplash.com/photo-1526401485004-2fa806b4f3d1",
+    "category": "Essentials"
+  },
+  {
+    "id": 5,
+    "name": "Sunscreen SPF 50",
+    "brand": "SkinGuard",
+    "price": 10,
+    "rating": 4.9,
+    "stock": 40,
+    "description": "High protection sunscreen to shield your skin from harmful UV rays.",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
+    "category": "Skincare"
+  },
+  {
+    "id": 6,
+    "name": "Portable Mini Fan",
+    "brand": "BreezeGo",
+    "price": 14,
+    "rating": 4.4,
+    "stock": 20,
+    "description": "Handheld mini fan for instant cooling wherever you go.",
+    "image": "https://images.unsplash.com/photo-1594385208974-2e75f8d4f6c1",
+    "category": "Electronics"
+  }
+]
