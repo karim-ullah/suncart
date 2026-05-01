@@ -14,7 +14,7 @@ const Hero = () => {
                     <Button><Link href={'/products'}>Shop Now</Link></Button>
                 </div>
                 <div className='hidden lg:block'>
-                    <Image src={heroImg} height={400} width={400}></Image>
+                    <Image src={heroImg} height={400} width={400} alt='hero-img'></Image>
                 </div>
             </div>
         </div>

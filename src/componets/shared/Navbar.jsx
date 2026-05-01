@@ -56,13 +56,15 @@ const Navbar = () => {
             </svg>
           </button>
           <div className="flex items-center gap-3">
-            <p className="font-bold text-3xl">SunCart</p>
+            <Link href={'/'} className="font-bold text-3xl">SunCart</Link>
           </div>
         </div>
         <ul className="hidden items-center gap-4 md:flex">{links}</ul>
         <div className="hidden items-center gap-4 md:flex">
-          <Link href="#">Login</Link>
-          <Button>Sign Up</Button>
+          <Link href="/login">Login</Link>
+          <Button>
+            <Link href={'/signup'}>Sign Up</Link>
+            </Button>
         </div>
       </header>
       {isMenuOpen && (

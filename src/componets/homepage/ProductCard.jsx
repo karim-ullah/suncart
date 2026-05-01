@@ -2,13 +2,14 @@ import React from 'react';
 import {Button, Card} from "@heroui/react";
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
+import Link from 'next/link';
 
 
 const ProductCard = ({product}) => {
     return (
          <Card className="w-full">
       <div className="w-full rounded-2xl">
-        <Image className='rounded-2xl h-70' src={product.image} width={400} height={400}></Image>
+        <Image className='rounded-2xl h-70' src={product.image} width={400} height={400} alt={product.name}></Image>
       </div>
       <div className="flex flex-1 flex-col gap-3">
         <Card.Header className="gap-2">
@@ -28,7 +29,9 @@ const ProductCard = ({product}) => {
 
                 </div>
           </div>
-          <Button className="w-full sm:w-auto">View Details</Button>
+          <Button className="w-full sm:w-auto">
+            <Link href= {`/product-details/${product.id}`} >View Details</Link>
+            </Button>
         </Card.Footer>
       </div>
     </Card>
