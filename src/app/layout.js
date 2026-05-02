@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Footer from "@/componets/shared/Footer";
 
 
 const poppins = Poppins({
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} min-h-full`}>
         
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
