@@ -47,8 +47,8 @@ const Footer = () => {
       </div>
       <div className="space-y-3">
         <h2 className="font-semibold text-2xl">Download</h2>
-        <Image src={appStoreImg}></Image>
-        <Image src={playStoeImg}></Image>
+        <Image src={appStoreImg} alt="app store"></Image>
+        <Image src={playStoeImg} alt="play store"></Image>
       </div>
       </div>
         <Separator></Separator>
