@@ -24,7 +24,7 @@ const Footer = () => {
     <div className="max-w-11/12 mx-auto">
       <div className="flex flex-col md:flex-row justify-between py-10 gap-5">
         <div className="space-y-4">
-        <Link href={"/"} className="font-bold text-3xl">
+        <Link href={"/"} className="font-bold text-2xl">
           SunCart
         </Link>
         <p className="text-sm text-gray-500">60, 29th Street #343, Shahbag, <br /> Dhaka, Bangladesh</p>
@@ -42,11 +42,11 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <h2 className="font-semibold text-2xl">Links</h2>
+        <h2 className="font-semibold text-xl">Links</h2>
         <ul className="text-gray-500">{links}</ul>
       </div>
       <div className="space-y-3">
-        <h2 className="font-semibold text-2xl">Download</h2>
+        <h2 className="font-semibold text-xl">Download</h2>
         <Image src={appStoreImg} alt="app store"></Image>
         <Image src={playStoeImg} alt="play store"></Image>
       </div>

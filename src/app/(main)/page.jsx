@@ -3,7 +3,7 @@ import { getProduct } from "@/lib/loadproducts";
 
 export default async function Home() {
  const products = await getProduct()
- console.log(products);
+//  console.log(products);
  
   return (
     <div className="max-w-11/12 mx-auto py-10">

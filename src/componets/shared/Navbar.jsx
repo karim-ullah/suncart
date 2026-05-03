@@ -1,29 +1,61 @@
 "use client";
-import React from "react";
-import { useState } from "react";
-import { Button } from "@heroui/react";
+import React, { useState } from "react";
+import { Avatar, Button } from "@heroui/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
+import { router } from "better-auth/api";
 
 const Navbar = () => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  // console.log(user);
+
+  const handleLogOut = async() =>{
+    await authClient.signOut()
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
 
   const links = (
     <>
       <li>
-        <Link className={pathName === '/' ? 'border-b-2 border-amber-300' : ''} href="/">Home</Link>
+        <Link
+          className={pathName === "/" ? "border-b-2 border-amber-300" : ""}
+          href="/"
+        >
+          Home
+        </Link>
       </li>
       <li>
-        <Link className={pathName === '/products' ? 'border-b-2 border-amber-300' : ''} href="/products">Products</Link>
+        <Link
+          className={
+            pathName === "/products" ? "border-b-2 border-amber-300" : ""
+          }
+          href="/products"
+        >
+          Products
+        </Link>
+      </li>
+      <li>
+        <Link
+          className={
+            pathName === "/my-profile" ? "border-b-2 border-amber-300" : ""
+          }
+          href="/my-profile"
+        >
+          My Profile
+        </Link>
       </li>
     </>
   );
 
   return (
-    <nav className="sticky top-0 z-40 w-full shadow-sm bg-background/70 backdrop-blur-lg">
-      <header className="mx-auto flex h-16 max-w-11/12 items-center justify-between">
+    <nav className="sticky top-0 z-40 w-full shadow-sm bg-background/50 backdrop-blur-lg">
+      <header className="mx-auto flex h-14 max-w-11/12 items-center justify-between">
         <div className="flex items-center gap-4">
           <button
             className="md:hidden"
@@ -56,26 +88,41 @@ const Navbar = () => {
             </svg>
           </button>
           <div className="flex items-center gap-3">
-            <Link href={'/'} className="font-bold text-3xl">SunCart</Link>
+            <Link href={"/"} className="font-bold text-2xl">
+              SunCart
+            </Link>
           </div>
         </div>
-        <ul className="hidden items-center gap-4 md:flex">{links}</ul>
-        <div className="hidden items-center gap-4 md:flex">
-          <Link href="/login">Login</Link>
-          <Button>
-            <Link href={'/signup'}>Sign Up</Link>
+        <ul className="hidden items-center gap-4 md:flex text-sm">{links}</ul>
+        {!user && (
+          <div className="hidden items-center gap-4 md:flex">
+            <Link href="/login">Login</Link>
+            <Button>
+              <Link href={"/signup"}>Sign Up</Link>
             </Button>
-        </div>
+          </div>
+        )}
+        {user && (
+          <div className="hidden items-center gap-4 md:flex">
+            <Avatar size="sm">
+              <Avatar.Image alt={user?.image} src={user?.image} referrerPolicy="no-referrer" />
+              <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+            </Avatar>
+            <Button size="sm" onClick={handleLogOut}>Logout</Button>
+          </div>
+        )}
       </header>
       {isMenuOpen && (
         <div className="border-t border-separator md:hidden">
           <ul className="flex flex-col gap-2 p-4">
             {links}
             <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-              <Link href="#" className="block py-2">
+              <Link href="/login" className="block py-2">
                 Login
               </Link>
-              <Button className="w-full">Sign Up</Button>
+              <Button size="sm" className="">
+                <Link href={"/signup"}>Sign Up</Link>
+              </Button>
             </li>
           </ul>
         </div>
