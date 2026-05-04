@@ -1,34 +1,53 @@
-'use client'
+"use client";
 import { authClient } from "@/lib/auth-client";
-import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
+import {
+  Button,
+  Description,
+  FieldError,
+  Form,
+  Input,
+  Label,
+  Separator,
+  TextField,
+} from "@heroui/react";
+import Link from "next/link";
 import React from "react";
 import { BiCheck } from "react-icons/bi";
+import { CgGoogle } from "react-icons/cg";
 
 const LoginPage = () => {
-    const onSubmit = async(e) =>{
-        e.preventDefault()
-        const formData = new FormData(e.target)
-        const dataForm = Object.fromEntries(formData.entries())
-        // console.log(dataForm);
-        const {email, password} = dataForm
-        const {data, error} = await authClient.signIn.email({
-            email: email,
-            password: password,
-            callbackURL: '/'
-        })
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const dataForm = Object.fromEntries(formData.entries());
+    // console.log(dataForm);
+    const { email, password } = dataForm;
+    const { data, error } = await authClient.signIn.email({
+      email: email,
+      password: password,
+      callbackURL: "/",
+    });
 
-        if(data){
-            alert('Login Successfull')
-        }
-
-        if(error){
-            alert(error.message)
-        }
-        
+    if (data) {
+      alert("Login Successfull");
     }
+
+    if (error) {
+      alert(error.message);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
   return (
-    <div className="max-w-11/12 mx-auto flex justify-center items-center h-screen">
-      <Form className="flex w-96 flex-col gap-4 shadow-sm p-10 rounded-2xl" onSubmit={onSubmit}>
+    <div className="max-w-11/12 mx-auto flex flex-col justify-center items-center py-10">
+      <Form
+        className="flex w-full md:w-96 flex-col gap-4 shadow-sm p-10 rounded-2xl"
+        onSubmit={onSubmit}
+      >
         <h3 className="font-semibold text-2xl text-center">Login</h3>
         <Separator></Separator>
         <TextField
@@ -76,8 +95,22 @@ const LoginPage = () => {
             <BiCheck />
             Login
           </Button>
-          
         </div>
+
+        <Separator></Separator>
+        <span className="text-center">or</span>
+        <Button
+          onClick={handleGoogleSignIn}
+          className="w-full"
+          variant="outline"
+        >
+          <CgGoogle />
+          Sign in with Google
+        </Button>
+        <p className="text-xs text-center">
+          <span className="text-muted">Don’t have an account? </span>
+          <Link href={"/signup"}>SignUp</Link>
+        </p>
       </Form>
     </div>
   );

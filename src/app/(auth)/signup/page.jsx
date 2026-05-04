@@ -10,10 +10,13 @@ import {
   Separator,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import React from "react";
 import { BiCheck } from "react-icons/bi";
+import { CgGoogle } from "react-icons/cg";
 
 const SignUpPage = () => {
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -40,10 +43,18 @@ const SignUpPage = () => {
       alert(error.message);
     }
   };
+
+  const handleGoogleSignUp = async () => {
+      const data = await authClient.signIn.social({
+        provider: "google",
+      });
+    }
+
+
   return (
-    <div className="max-w-11/12 mx-auto flex justify-center items-center h-screen">
+    <div className="w-11/12 mx-auto flex justify-center items-center py-10">
       <Form
-        className="flex w-96 flex-col gap-4 shadow-sm p-10"
+        className="flex w-full md:w-96 flex-col gap-4 shadow-sm p-10 shadow-sm rounded-2xl"
         onSubmit={onSubmit}
       >
         <h3 className="font-semibold text-2xl text-center">SignUp</h3>
@@ -123,9 +134,23 @@ const SignUpPage = () => {
             Register
           </Button>
         </div>
+        <Separator></Separator>
+        <span className="text-center">or</span>
+        <Button
+          onClick={handleGoogleSignUp}
+          className="w-full"
+          variant="outline"
+        >
+          <CgGoogle />
+          Sign in with Google
+        </Button>
+        <p className="text-xs text-center">
+          <span className="text-muted">Already have an account? </span>
+          <Link href={"/login"}>Log in to continue.</Link>
+        </p>
       </Form>
     </div>
-  );
-};
+  )
+  }
 
 export default SignUpPage;
