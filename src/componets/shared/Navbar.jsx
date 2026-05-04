@@ -95,7 +95,7 @@ const Navbar = () => {
         </div>
         <ul className="hidden items-center gap-4 md:flex text-sm">{links}</ul>
         {!user && (
-          <div className="hidden items-center gap-4 md:flex">
+          <div className="flex items-center gap-4 md:flex">
             <Link href="/login">Login</Link>
             <Button>
               <Link href={"/signup"}>Sign Up</Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
           </div>
         )}
         {user && (
-          <div className="hidden items-center gap-4 md:flex">
+          <div className="items-center gap-4 md:flex">
             <Avatar size="sm">
               <Avatar.Image alt={user?.image} src={user?.image} referrerPolicy="no-referrer" />
               <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
@@ -113,17 +113,10 @@ const Navbar = () => {
         )}
       </header>
       {isMenuOpen && (
+        
         <div className="border-t border-separator md:hidden">
           <ul className="flex flex-col gap-2 p-4">
             {links}
-            <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-              <Link href="/login" className="block py-2">
-                Login
-              </Link>
-              <Button size="sm" className="">
-                <Link href={"/signup"}>Sign Up</Link>
-              </Button>
-            </li>
           </ul>
         </div>
       )}
