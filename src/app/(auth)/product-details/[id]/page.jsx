@@ -13,7 +13,7 @@ const ProductDetails = async ({ params }) => {
   console.log(expectedProduct);
 
   return (
-    <div className="max-w-11/12 h-fit mx-auto py-10 flex flex-col md:flex-row gap-5">
+    <div className="max-w-7xl px-4 h-fit mx-auto py-10 flex flex-col md:flex-row gap-5">
       <div className="border border-amber-100 rounded-sm w-full md:w-[40%] p-5">
         <div className="overflow-hidden w-full h-[350px] relative">
           <Image

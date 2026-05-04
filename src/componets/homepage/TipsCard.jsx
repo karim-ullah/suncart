@@ -3,7 +3,7 @@ import React from "react";
 
 const TipsCard = ({ tip }) => {
   return (
-    <Card className="w-full max-w-md mx-auto border shadow-lg rounded-2xl hover:bg-gray-100 transition">
+    <Card className="w-full mx-auto border shadow-lg rounded-2xl hover:bg-gray-100 transition">
      
       <CardContent className="space-y-4">
         <div>{tip.icon}</div>

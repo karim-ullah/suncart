@@ -8,7 +8,7 @@ export default async function Home() {
   //  console.log(products);
 
   return (
-    <div className="max-w-11/12 mx-auto py-10">
+    <div className="animate_animated animate_fadeInUp max-w-7xl px-4 mx-auto py-10">
       <h1 className="font-semibold text-3xl text-center pb-5">
         Popular Products
       </h1>

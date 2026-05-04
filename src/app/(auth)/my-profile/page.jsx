@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const user = userData.data?.user;
 //   console.log(user);
   return (
-    <div className="max-w-11/12 mx-auto py-10">
+    <div className="max-w-7xl px-4 mx-auto py-10">
       <Card className="max-w-96 mx-auto flex flex-col items-center border">
         <Avatar size="lg">
           <Avatar.Image

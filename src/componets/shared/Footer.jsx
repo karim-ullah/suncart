@@ -21,7 +21,7 @@ const Footer = () => {
     </>
   );
   return (
-    <div className="max-w-11/12 mx-auto">
+    <div className="max-w-7xl px-4 mx-auto">
       <div className="flex flex-col md:flex-row justify-between py-10 gap-5">
         <div className="space-y-4">
         <Link href={"/"} className="font-bold text-2xl">

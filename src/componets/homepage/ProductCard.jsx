@@ -9,7 +9,7 @@ const ProductCard = ({product}) => {
     return (
          <Card className="w-full">
       <div className="w-full rounded-2xl">
-        <Image className='rounded-2xl h-70' src={product.image} width={400} height={400} alt={product.name}></Image>
+        <Image className='rounded-2xl h-70 w-full' src={product.image} width={400} height={400} alt={product.name}></Image>
       </div>
       <div className="flex flex-1 flex-col gap-3">
         <Card.Header className="gap-2">

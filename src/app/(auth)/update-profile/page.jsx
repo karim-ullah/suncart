@@ -19,7 +19,7 @@ const UpdateProfile = () => {
         
     }
   return (
-    <div className="max-w-11/12 mx-auto flex justify-center items-center py-10">
+    <div className="max-w-7xl px-4 mx-auto flex justify-center items-center py-10">
       <Form className="w-full max-w-96 p-10 shadow-sm border rounded-2xl" onSubmit={onSubmit}>
         <Fieldset>
           <Fieldset.Legend>Update Profile</Fieldset.Legend>

@@ -1,7 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/componets/shared/Footer";
-
+import 'animate.css';
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,8 +17,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`h-full antialiased`}>
+      
       <body className={`${poppins.className} min-h-full`}>
-        
         {children}
         <Footer></Footer>
       </body>

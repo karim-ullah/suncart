@@ -58,7 +58,7 @@ const SignUpPage = () => {
 
 
   return (
-    <div className="w-11/12 mx-auto flex justify-center items-center py-10">
+    <div className="max-w-7xl px-4 mx-auto flex justify-center items-center py-10">
       <Form
         className="flex w-full md:w-96 flex-col gap-4 shadow-sm p-10 shadow-sm rounded-2xl"
         onSubmit={onSubmit}
