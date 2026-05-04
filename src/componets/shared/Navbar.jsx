@@ -95,7 +95,7 @@ const Navbar = () => {
         </div>
         <ul className="hidden items-center gap-4 md:flex text-sm">{links}</ul>
         {!user && (
-          <div className="flex items-center gap-3 md:flex">
+          <div className="flex items-center gap-3">
             <Link href="/login">Login</Link>
             <Button>
               <Link href={"/signup"}>Sign Up</Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
           </div>
         )}
         {user && (
-          <div className="items-center gap-2 md:flex">
+          <div className="flex items-center gap-2">
             <Avatar size="sm">
               <Avatar.Image alt={user?.image} src={user?.image} referrerPolicy="no-referrer" />
               <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
