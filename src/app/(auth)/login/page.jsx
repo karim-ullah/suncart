@@ -11,11 +11,15 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { BiCheck } from "react-icons/bi";
 import { CgGoogle } from "react-icons/cg";
 
 const LoginPage = () => {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/';
+  const router = useRouter()
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -35,12 +39,14 @@ const LoginPage = () => {
     if (error) {
       alert(error.message);
     }
+    router.push(callbackUrl)
   };
 
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
     });
+    router.push(callbackUrl)
   };
   return (
     <div className="max-w-11/12 mx-auto flex flex-col justify-center items-center py-10">

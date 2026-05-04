@@ -16,4 +16,5 @@ Users can explore products, view details, and securely place orders after loggin
 1. heroicons/react
 2. react icon
 3. Better Auth
+4. Animate CSS
 
