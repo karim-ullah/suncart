@@ -24,7 +24,7 @@ const SummerCareTips = () => {
   ];
   return (
     <div>
-        <h2 className="font-semibold text-3xl text-center">Summer Care Tips</h2>
+        <h2 className="animate_animated animate__fadeInUp font-semibold text-3xl text-center">Summer Care Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5">
             {
             tips.map((tip, index) => <TipsCard key={index} tip = {tip}></TipsCard>)
