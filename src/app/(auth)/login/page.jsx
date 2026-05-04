@@ -34,12 +34,13 @@ const LoginPage = () => {
 
     if (data) {
       alert("Login Successfull");
+      router.push(callbackUrl)
     }
 
     if (error) {
       alert(error.message);
     }
-    router.push(callbackUrl)
+    // router.push(callbackUrl)
   };
 
   const handleGoogleSignIn = async () => {
