@@ -11,11 +11,14 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { BiCheck } from "react-icons/bi";
 import { CgGoogle } from "react-icons/cg";
 
 const SignUpPage = () => {
+
+  const router = useRouter()
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -29,8 +32,11 @@ const SignUpPage = () => {
       email: email,
       image: url,
       password: password,
-      callbackURL: "/",
+      
     });
+    if(!error){
+      router.push('/')
+    }
 
     // console.log(name, email, url, password, 'formdata');
 
