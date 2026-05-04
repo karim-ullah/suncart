@@ -35,7 +35,7 @@ const TopBrand = () => {
         {brands.map((brand, index) => (
           <Card
             key={index}
-            className="rounded-2xl shadow-md hover:shadow-xl transition duration-300 group"
+            className="rounded-2xl border shadow-md hover:shadow-xl transition duration-300 group"
           >
             <CardContent className="flex flex-col items-center text-center p-6">
               <div className="relative w-20 h-20 mb-4">
